@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 
-          src="https://res.cloudinary.com/chocobrain/image/upload/c_scale,dpr_auto,f_auto,q_auto,w_auto/v1600681135/7t3ovaGJ/Leistungen%20Pflege%20Schubkarre?_a=BACAGSGT" 
+          src="https://images.pexels.com/photos/29288279/pexels-photo-29288279.jpeg" 
           alt="Architektonisch perfekte Terrasse" 
           className="w-full h-full object-cover"
         />
