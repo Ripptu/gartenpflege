@@ -9,12 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "lucide-react": "^0.562.0",
-    "react-dom": "^19.2.3",
-    "react": "^19.2.3",
-    "framer-motion": "^12.25.0",
-    "tailwind-merge": "^3.4.0",
-    "clsx": "^2.1.1"
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "lucide-react": "0.344.0",
+    "framer-motion": "11.0.8",
+    "tailwind-merge": "2.2.1",
+    "clsx": "2.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
