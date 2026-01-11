@@ -1,0 +1,28 @@
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import Trust from './components/Trust';
+import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+
+function App() {
+  return (
+    <div className="font-sans antialiased text-anthracite bg-cream selection:bg-forest selection:text-white">
+      <Navbar />
+      <main>
+        <Hero />
+        <Services />
+        <Trust />
+        <Testimonials />
+        <FAQ />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
