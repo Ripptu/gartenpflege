@@ -9,22 +9,49 @@ const TRUST_ITEMS = [
   { icon: ShieldCheck, title: "Langfristige Ergebnisse", desc: "Wir bauen für die Zukunft. Haltbarkeit steht im Fokus." },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
+
 const Trust: React.FC = () => {
   return (
     <section id="trust" className="py-20 bg-white border-y border-stone/50">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8"
+        >
           {TRUST_ITEMS.map((item, index) => (
             <motion.div 
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="flex flex-col items-start gap-4"
+              variants={itemVariants}
+              className="flex flex-col items-start gap-4 group cursor-default"
             >
-              <div className="p-3 bg-cream rounded-xl">
-                <item.icon className="w-6 h-6 text-forest" strokeWidth={1.5} />
+              <div className="p-3 bg-cream rounded-xl group-hover:bg-forest transition-colors duration-500">
+                <motion.div
+                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <item.icon className="w-6 h-6 text-forest group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
+                </motion.div>
               </div>
               <div>
                 <h4 className="font-serif text-xl text-anthracite mb-2">{item.title}</h4>
@@ -32,7 +59,7 @@ const Trust: React.FC = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
